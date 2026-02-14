@@ -6,4 +6,4 @@ class Solution:
                 result += "[.]"
             else:
                 result += c
-        return result
+        return result   
