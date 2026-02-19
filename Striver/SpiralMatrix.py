@@ -6,7 +6,7 @@ class Solution:
 
         left, right, top, bottom = 0, len(matrix[0]) - 1, 0, len(matrix) - 1
         
-        while left <= raight and top <= bottom:
+        while left <= right and top <= bottom:
             for i in range(left, right + 1):
                 result.append(matrix[top][i])
             
