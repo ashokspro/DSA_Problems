@@ -15,7 +15,7 @@ class Solution:
 
 
     #using set
-
+"""
     class Solution:
     def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
         res = []
@@ -25,3 +25,5 @@ class Solution:
                 res.append(i)
 
         return res
+        
+"""
