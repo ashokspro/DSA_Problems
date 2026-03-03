@@ -13,7 +13,7 @@ class Solution:
         return res
 
 
-# Brute Force
+# Brute Force   
 """class Solution:
     def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
         hm = {}
