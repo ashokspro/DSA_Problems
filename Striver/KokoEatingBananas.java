@@ -1,4 +1,4 @@
-public class Solution {
+public class KokoEatingBananas {
     public int minEatingSpeed(int[] piles, int h) {
         int left = 1;
         int right = Arrays.stream(piles).max().getAsInt(); 
