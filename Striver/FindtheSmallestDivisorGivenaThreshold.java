@@ -1,29 +1,28 @@
 public class FindtheSmallestDivisorGivenaThreshold  {
     public int smallestDivisor(int[] nums, int threshold) {
-        int low = 1;
-        int high = 0;
-
-        // find max element
-        for (int num : nums) {
-            high = Math.max(high, num);
+        int min = 1;
+        int max = Integer.MIN_VALUE;
+        for (int i=0; i<nums.length; i++){
+            max = Math.max(max, nums[i]);
         }
 
-        while (low < high) {
-            int mid = low + (high - low) / 2;
+        while (min <= max){
+            
+            int mid = min + (max-min) / 2;
+            int num = 0;
 
-            int sum = 0;
-            for (int num : nums) {
-                sum += (num + mid - 1) / mid; // ceil division
+            for (int i=0; i<nums.length; i++){
+                num += (nums[i] + mid - 1) / mid;
             }
-
-            if (sum <= threshold) {
-                high = mid; // try smaller divisor
-            } else {
-                low = mid + 1; // need bigger divisor
+            if (num <= threshold){
+                max = mid - 1;
+            }
+            else{
+                min = mid + 1;
             }
         }
-
-        return low;
+        return min;
+               
     }
     
 }
