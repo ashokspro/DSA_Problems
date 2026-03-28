@@ -1,23 +1,32 @@
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
         int left = 0, right = 0;
-        for (int w: weights) {
-            left = Math.max(left, w);
+
+        for (int w: weights){
+            left = Math.max(w,left);
             right += w;
         }
-        while (left < right) {
-            int mid = (left + right) / 2, need = 1, cur = 0;
-            for (int w: weights) {
-                if (cur + w > mid) {
+
+        while (left < right){
+            int mid = left + (right - left) / 2;
+            int curr = 0;
+            int need = 1;
+            
+            for (int w: weights){
+                if (curr + w > mid){
                     need += 1;
-                    cur = 0;
+                    curr = 0;
                 }
-                cur += w;
+                curr += w;
             }
-            if (need > days) left = mid + 1;
-            else right = mid;
+                if (need > days){
+                    left = mid + 1;                    
+                }
+                else{
+                    right = mid;
+                }
+            }
+            return left;
         }
-        return left;
         
     }
-}
